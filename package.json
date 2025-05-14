@@ -1,0 +1,22 @@
+{
+  "name": "devops",
+  "version": "1.0.0",
+  "description": "devops test app",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RadCzu/DevOpsTestNode.git"
+  },
+  "author": "Radosław Czuj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RadCzu/DevOpsTestNode/issues"
+  },
+  "homepage": "https://github.com/RadCzu/DevOpsTestNode#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
