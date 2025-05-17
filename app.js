@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const port = 2137
 
+app.use(express.json())
+
 var storage = "default"
 
 app.get('/', (req, res) => {
