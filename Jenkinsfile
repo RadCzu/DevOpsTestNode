@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'radeczu/node-with-jq:docker'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
 
@@ -39,6 +40,9 @@ pipeline {
                     set -e
 
                     local_v=$(jq -r '.version' package.json)
+
+                    export DOCKER_CONFIG=/tmp/.docker
+                    mkdir -p /tmp/.docker
 
                     echo "Logging in to DockerHub..."
                     echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
