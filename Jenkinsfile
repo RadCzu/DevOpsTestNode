@@ -21,14 +21,15 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                echo "Testing.."
-                sh '''
-                chmod +x test.sh
-                ls -la
-                ./test.sh
-                '''
-            }
+          steps {
+              echo "Testing.."
+              sh '''
+              cd "$WORKSPACE"
+              chmod +x test.sh
+              ls -la
+              ./test.sh
+              '''
+          }
         }
 
         stage('Containerize') {
