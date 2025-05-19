@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
             image 'radeczu/node-with-jq:docker'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
 
