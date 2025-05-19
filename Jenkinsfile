@@ -2,6 +2,7 @@ pipeline {
     agent {
         docker {
             image 'radeczu/node-with-jq:docker'
+            -v /home/jenkins/.docker:/root/.docker
         }
     }
 
