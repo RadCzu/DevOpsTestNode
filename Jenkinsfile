@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'radeczu/node-with-jq:docker'
-            args '--privileged'
+            label 'docker'
         }
     }
 
