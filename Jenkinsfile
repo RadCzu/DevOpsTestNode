@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'radeczu/node-with-jq:latest'
+            image 'radeczu/node-with-jq:docker'
         }
     }
 
