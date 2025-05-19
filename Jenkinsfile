@@ -23,8 +23,6 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                apt-get update
-                apt-get install -y jq
                 chmod +x test.sh
                 ./test.sh
                 '''
