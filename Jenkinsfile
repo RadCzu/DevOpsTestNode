@@ -22,10 +22,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                ls
                 echo "Testing.."
                 sh '''
                 chmod +x test.sh
+                ls -la
                 ./test.sh
                 '''
             }
