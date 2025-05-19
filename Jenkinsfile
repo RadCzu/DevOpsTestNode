@@ -4,7 +4,7 @@ pipeline {
             image 'node:18'
         }
     }
-    
+
     triggers {
       pollSCM '*/5 * * * *'
     }
@@ -14,7 +14,7 @@ pipeline {
                 echo "Building.."
                 sh '''
                 npm install
-                npm run start
+                npm run start &> app.log &
                 '''
             }
         }
