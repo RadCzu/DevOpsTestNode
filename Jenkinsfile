@@ -23,6 +23,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
+                chmod +x test.sh
                 ./test.sh
                 '''
             }
