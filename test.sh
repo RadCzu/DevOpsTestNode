@@ -1,20 +1,14 @@
 #!/bin/bash
 set -e
 
-# Wait for app to become reachable
-echo "Waiting for app to start on port 2137..."
-for i in {1..10}; do
-  if curl -s http://localhost:2137 > /dev/null; then
-    echo "App is up!"
-    break
-  fi
-  echo "App not yet reachable... retrying in 2s ($i/10)"
-  sleep 2
-  if [ "$i" -eq 10 ]; then
-    echo "ERROR: App failed to start after 10 attempts"
-    exit 1
-  fi
-done
+# Health check
+if curl -s http://localhost:2137 > /dev/null; then
+  echo "App is up!"
+  break
+else
+  echo "ERROR: App failed to start after 10 attempts"
+  exit 1
+fi
 
 # Initial /storage check
 response=$(curl -s http://localhost:2137/storage)
