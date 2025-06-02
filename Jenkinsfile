@@ -49,6 +49,9 @@ pipeline {
                     sh '''
                     set -e
 
+                    echo "DOCKER_HOST=$DOCKER_HOST"
+                    docker info
+
                     local_v=$(jq -r '.version' package.json)
 
                     echo "Logging in to DockerHub..."
