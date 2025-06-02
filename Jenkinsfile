@@ -5,6 +5,7 @@ pipeline {
     agent {
         docker {
             image 'radeczu/node-with-jq'
+            args '--add-host=host.docker.internal:host-gateway'
         }
     }
     triggers {
