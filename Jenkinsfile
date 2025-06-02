@@ -13,6 +13,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
+                mkdir -p /.npm
+                chown -R 1000:1000 /.npm || true
                 npm install
                 npm run start &> app.log &
                 '''
