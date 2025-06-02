@@ -1,11 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'radeczu/node-with-jq:docker'
-            label 'docker'
-        }
-    }
-
+  agent any
     triggers {
       pollSCM '*/5 * * * *'
     }
