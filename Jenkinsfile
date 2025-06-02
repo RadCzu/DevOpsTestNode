@@ -92,6 +92,8 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 sh '''
+                 version=$(cat version.txt)
+                  echo "Using version: $version"
                   echo "Pushing to DockerHub..."
                   docker push radeczu/apitestapp:$version
                   docker push radeczu/apitestapp:latest
