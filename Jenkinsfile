@@ -36,7 +36,7 @@ pipeline {
               cd "$WORKSPACE"
               chmod +x test.sh
               ls -la
-              sh 'bash test.sh'
+              bash test.sh
               '''
           }
         }
