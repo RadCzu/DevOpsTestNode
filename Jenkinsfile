@@ -9,7 +9,7 @@ pipeline {
       pollSCM '*/5 * * * *'
     }
     stages {
-      
+
       stage('Prepare') {
           steps {
               cleanWs()
@@ -20,6 +20,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
+                rm -rf node_modules package-lock.json
                 npm install
                 npm run start &> app.log &
                 '''
