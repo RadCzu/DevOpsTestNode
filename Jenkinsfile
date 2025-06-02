@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                rm -rf node_modules package-lock.json
+                ls -a
                 npm install
                 npm run start &> app.log &
                 '''
