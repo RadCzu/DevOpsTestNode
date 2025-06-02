@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'radeczu/node-with-jq'
-            args '--add-host=host.docker.internal:host-gateway'
+            args '--add-host=host.docker.internal:host-gateway -e DOCKER_HOST=tcp://host.docker.internal:2375'
         }
     }
     triggers {
@@ -48,7 +48,6 @@ pipeline {
                     echo 'Containerizing...'
                     sh '''
                     set -e
-
                     echo "DOCKER_HOST=$DOCKER_HOST"
                     docker info
 
