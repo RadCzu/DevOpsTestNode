@@ -33,6 +33,7 @@ pipeline {
           steps {
               echo "Testing.."
               sh '''
+              apk add --no-cache bash
               cd "$WORKSPACE"
               chmod +x test.sh
               ls -la
