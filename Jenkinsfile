@@ -33,6 +33,7 @@ pipeline {
               sleep 2
               chmod +x test.sh
               ls -la
+              cat app.log
               sh test.sh
               '''
           }
