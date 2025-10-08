@@ -29,6 +29,8 @@ pipeline {
               echo "Testing.."
               sh '''
               cd "$WORKSPACE"
+              npm run start &> app.log &
+              sleep 2
               chmod +x test.sh
               ls -la
               sh test.sh
