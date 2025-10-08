@@ -13,12 +13,6 @@ pipeline {
     }
     stages {
 
-      stage('Prepare') {
-          steps {
-              cleanWs()
-          }
-      }
-
         stage('Build') {
             steps {
                 echo "Building.."
